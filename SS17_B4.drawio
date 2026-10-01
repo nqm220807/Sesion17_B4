@@ -1,0 +1,100 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="activity-tinh-cuoc" name="Activity Diagram - Tinh cuoc van don">
+    <mxGraphModel dx="1188" dy="676" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start" parent="1" style="ellipse;html=1;aspect=fixed;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="395" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="input" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontColor=#000000;" value="Nhập thông tin bưu kiện&#xa;(Dài, Rộng, Cao, KL thực tế,&#xa;Mã bưu chính, Dịch vụ, Giá trị khai giá)" vertex="1">
+          <mxGeometry height="80" width="280" x="270" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="valid" parent="1" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontColor=#000000;" value="Dữ liệu hợp lệ?&#xa;- Kích thước là số dương&#xa;- Mỗi chiều ≤ 150 cm&#xa;- KL thực tế &gt; 0&#xa;- Mã bưu chính hợp lệ" vertex="1">
+          <mxGeometry height="120" width="220" x="300" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="error" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontColor=#000000;" value="Thông báo lỗi dữ liệu&#xa;và yêu cầu nhập lại" vertex="1">
+          <mxGeometry height="70" width="180" x="600" y="235" as="geometry" />
+        </mxCell>
+        <mxCell id="vol" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontColor=#000000;" value="Tính khối lượng quy đổi&#xa;KLQĐ = (Dài × Rộng × Cao) / 5000" vertex="1">
+          <mxGeometry height="70" width="280" x="270" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="chargeweight" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontColor=#000000;" value="Xác định khối lượng tính cước&#xa;KLTC = Max(KL thực tế, KLQĐ)" vertex="1">
+          <mxGeometry height="70" width="280" x="270" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="service" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontColor=#000000;" value="Tính cước cơ bản theo dịch vụ&#xa;Economy / Express / Fast Track&#xa;(sau 1 kg: làm tròn lên theo mỗi 0.5 kg)" vertex="1">
+          <mxGeometry height="85" width="320" x="250" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="remote" parent="1" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontColor=#000000;" value="Mã bưu chính thuộc&#xa;vùng sâu / vùng xa?" vertex="1">
+          <mxGeometry height="100" width="190" x="315" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="surcharge" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontColor=#000000;" value="Tính phụ phí vùng xa&#xa;= 20% cước cơ bản" vertex="1">
+          <mxGeometry height="70" width="190" x="590" y="735" as="geometry" />
+        </mxCell>
+        <mxCell id="insuranceQ" parent="1" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontColor=#000000;" value="Giá trị khai giá&#xa;&gt; 5.000.000đ?" vertex="1">
+          <mxGeometry height="100" width="190" x="315" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="insurance" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontColor=#000000;" value="Tính phí bảo hiểm&#xa;= 0,5% giá trị khai giá" vertex="1">
+          <mxGeometry height="70" width="190" x="590" y="885" as="geometry" />
+        </mxCell>
+        <mxCell id="route" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontColor=#000000;" value="Tra cứu mã bưu chính / vùng&#xa;và gợi ý kho trung chuyển phù hợp" vertex="1">
+          <mxGeometry height="70" width="280" x="270" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="total" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontColor=#000000;" value="Tính tổng cước&#xa;= Cước cơ bản + Phụ phí vùng xa + Phí bảo hiểm" vertex="1">
+          <mxGeometry height="70" width="320" x="250" y="1130" as="geometry" />
+        </mxCell>
+        <mxCell id="output" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;fontColor=#000000;" value="Hiển thị kết quả&#xa;KLQĐ, KL tính cước, cước cơ bản,&#xa;phụ phí, bảo hiểm, tổng cước, kho gợi ý" vertex="1">
+          <mxGeometry height="85" width="330" x="245" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="endOuter" parent="1" style="ellipse;html=1;aspect=fixed;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="40" width="40" x="390" y="1370" as="geometry" />
+        </mxCell>
+        <mxCell id="endInner" parent="1" style="ellipse;html=1;aspect=fixed;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="399" y="1379" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#000000;" target="input">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="input" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#000000;" target="valid">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="valid" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#000000;" target="vol" value="Có">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="valid" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#000000;" target="error" value="Không">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="vol" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#000000;" target="chargeweight">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="chargeweight" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#000000;" target="service">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="service" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#000000;" target="remote">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="remote" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#000000;" target="surcharge" value="Có">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="remote" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#000000;" target="insuranceQ" value="Không">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="insuranceQ" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#000000;" target="insurance" value="Có">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="insuranceQ" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#000000;" target="route" value="Không">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="route" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#000000;" target="total">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="total" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#000000;" target="output">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="output" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#000000;" target="endOuter">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
